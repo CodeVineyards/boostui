@@ -33,3 +33,18 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+```
+
+License
+This project is licensed under the MIT License.
+
+markdown
+Copy code
+
+This minimal `README.md` provides:
+- A **brief intro** about what boostui is.
+- **Installation instructions**.
+- **Basic usage example** to demonstrate how to integrate the `AggrThemeProvider`.
+- License information.
+
+You can expand this later as you add more components and features! Let me know if you'd like to adjust or add anything to this basic structure.
