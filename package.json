@@ -1,0 +1,9 @@
+{
+  "name": "boostui",
+  "version": "1.0.0",
+  "description": "Responsive, customizable Material-UI components with integrated context providers for seamless state management.",
+  "main": "index.ts",
+  "repository": "https://github.com/CodeVineyards/boostui.git",
+  "author": "<imrishutush@gmail.com>",
+  "license": "MIT"
+}
