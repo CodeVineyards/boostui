@@ -14,6 +14,7 @@
 
 ```bash
 npm install boostui @mui/material @emotion/react @emotion/styled
+```
 
 ## Usage
 
