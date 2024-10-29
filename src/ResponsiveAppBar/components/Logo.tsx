@@ -1,6 +1,6 @@
 import Link from '@mui/material/Link'
 
-type LogoProps = {
+export type LogoProps = {
   text?: string // Text for the logo when no image is provided
   href?: string // URL for the link
   imageUrl?: string // Image URL, replaces the text when provided
