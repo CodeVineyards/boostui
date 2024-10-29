@@ -38,9 +38,6 @@ export default MyApp;
 License
 This project is licensed under the MIT License.
 
-markdown
-Copy code
-
 This minimal `README.md` provides:
 - A **brief intro** about what boostui is.
 - **Installation instructions**.
