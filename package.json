@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Responsive, customizable Material-UI components with integrated context providers for seamless state management.",
   "repository": "https://github.com/yambaskillz/boostui.git",
-  "author": "<imrishutush@gmail.com>",
+  "author": "yambaskillz",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
