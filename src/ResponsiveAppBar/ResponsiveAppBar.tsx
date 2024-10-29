@@ -1,5 +1,5 @@
 const ResponsiveAppBar = () => {
-  return <div>ResponsiveAppBar</div>;
-};
+  return <div>ResponsiveAppBar</div>
+}
 
-export default ResponsiveAppBar;
+export default ResponsiveAppBar
