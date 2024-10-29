@@ -1,1 +1,2 @@
-"use strict";
+import ResponsiveAppBar from './ResponsiveAppBar'
+export default ResponsiveAppBar
