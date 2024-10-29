@@ -1,0 +1,9 @@
+src/
+node_modules/
+test/
+dist/test/
+.eslintrc.js
+.prettierrc
+jest.config.js
+tsconfig.json
+yarn.lock
