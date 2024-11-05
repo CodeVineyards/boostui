@@ -1,6 +1,6 @@
-import { defineConfig } from 'eslint-define-config'
+const { defineConfig } = require('eslint-define-config')
 
-export default defineConfig({
+module.exports = defineConfig({
   root: true,
   env: {
     es6: true,
@@ -23,6 +23,7 @@ export default defineConfig({
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
+  ignores: ['node_modules', 'dist'], // Ensure 'src' is not ignored here
   settings: {
     react: {
       version: 'detect',

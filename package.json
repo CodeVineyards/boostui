@@ -23,10 +23,12 @@
     "dist/**/*"
   ],
   "dependencies": {
+    "@emotion/cache": "^11.13.1",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.5",
+    "@mui/material-nextjs": "^6.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -46,6 +48,7 @@
     "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "eslint": "^9.13.0",
+    "eslint-define-config": "^2.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",

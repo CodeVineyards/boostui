@@ -1453,6 +1453,13 @@
   dependencies:
     "@babel/runtime" "^7.25.7"
 
+"@mui/material-nextjs@^6.1.5":
+  version "6.1.5"
+  resolved "https://registry.yarnpkg.com/@mui/material-nextjs/-/material-nextjs-6.1.5.tgz#03ad5a9cdd50887c1e38635260b8ff0f517294e4"
+  integrity sha512-sVTHkPu4KTRhPiklAF8/QLKELAo+DqqI1tJ+pXARjD0CKlNlMm9UQ2R2egC1nYMCAMq4ZPWblnh5zigNeVHzvQ==
+  dependencies:
+    "@babel/runtime" "^7.25.7"
+
 "@mui/material@^6.1.5":
   version "6.1.5"
   resolved "https://registry.yarnpkg.com/@mui/material/-/material-6.1.5.tgz#1ba8deda18564b277f37d957d523a9d2624b4b9a"
@@ -2525,6 +2532,11 @@ escape-string-regexp@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
+
+eslint-define-config@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-define-config/-/eslint-define-config-2.1.0.tgz#9708b3efd57637b6fb685d9c2fb6285b9acfbd71"
+  integrity sha512-QUp6pM9pjKEVannNAbSJNeRuYwW3LshejfyBBpjeMGaJjaDUpVps4C6KVR8R7dWZnD3i0synmrE36znjTkJvdQ==
 
 eslint-plugin-prettier@^5.2.1:
   version "5.2.1"
