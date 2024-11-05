@@ -11,7 +11,11 @@ export type LogoProps = {
 const Logo = ({ text, href, imageUrl, alt, ariaLabel }: LogoProps) => {
   return (
     <Link aria-label={ariaLabel} href={href || ''}>
-      {(!imageUrl && text) || 'LOGO'}
+      {imageUrl ? (
+        <img src={imageUrl} alt={alt || 'logo'} aria-label={ariaLabel} />
+      ) : (
+        text || 'LOGO'
+      )}
     </Link>
   )
 }
