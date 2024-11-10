@@ -1,12 +1,12 @@
 import Logo from '../components/Logo'
 
-import Grid from '@mui/material/Grid2'
+import Box from '@mui/material/Box'
 
 const LogoContainer = () => {
   return (
-    <Grid>
+    <Box width={'100%'} display={'flex'} justifyContent={'center'}>
       <Logo />
-    </Grid>
+    </Box>
   )
 }
 
