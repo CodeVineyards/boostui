@@ -1,5 +1,5 @@
 // providers/ThemeProvider/ThemeProvider.tsx
-
+'use client'
 import { Theme } from '@mui/material'
 import ThemeContext, { ThemeContextType } from './Context'
 
