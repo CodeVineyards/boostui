@@ -1,10 +1,10 @@
 'use client'
-import { Menu } from '@mui/icons-material'
 import AppBar from '@mui/material/AppBar'
 import Grid from '@mui/material/Grid2'
 import Toolbar from '@mui/material/Toolbar'
 import { useState } from 'react'
 import AppBarItem from './components/AppBarItem'
+import MenuButton from './components/MenuButton'
 import ActionsContainer from './containers/ActionsContainer'
 import LogoContainer from './containers/LogoContainer'
 import NavContainer from './containers/NavContainer'
@@ -42,9 +42,14 @@ const ResponsiveAppBar = ({
       <Toolbar>
         <Grid minWidth={'100%'} alignItems={'center'} container>
           <AppBarItem size={1} height={height} content={<LogoContainer />} />
-          <AppBarItem grow={1} height={height} content={<NavContainer />} />
+          <AppBarItem
+            gridProps={{ justifyContent: 'left' }}
+            grow={1}
+            height={height}
+            content={<NavContainer />}
+          />
           <AppBarItem height={height} content={<ActionsContainer />} />
-          <AppBarItem height={height} content={<Menu />} />
+          <AppBarItem size={0.75} height={height} content={<MenuButton />} />
         </Grid>
       </Toolbar>
     </AppBar>

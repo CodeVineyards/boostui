@@ -4,7 +4,7 @@ import { ReactNode } from 'react'
 
 type NavBarLinkProps = {
   href: string
-  text: string
+  text?: string
   icon?: ReactNode
   height?: number
 }
