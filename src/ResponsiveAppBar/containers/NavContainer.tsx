@@ -1,4 +1,4 @@
-import Grid from '@mui/material/Grid2'
+import Grid, { Grid2Props } from '@mui/material/Grid2'
 import { ReactNode } from 'react'
 import NavBarLink from '../components/NavBarLink'
 
@@ -6,6 +6,10 @@ type Link = { href: string; text: string; icon?: ReactNode }
 
 type NavContainerProps = {
   links?: Array<Link>
+  height?: number
+  size?: number
+  grow?: number
+  gridProps?: Grid2Props
 }
 
 const NavContainer = ({
@@ -15,6 +19,10 @@ const NavContainer = ({
     { href: '#link3', text: 'link3' },
     { href: '#link4', text: 'link4' },
   ],
+  height,
+  size,
+  grow,
+  gridProps,
 }: NavContainerProps) => {
   const linksList =
     links &&
@@ -22,7 +30,15 @@ const NavContainer = ({
       return <NavBarLink key={index} {...link} />
     })
   return (
-    <Grid size={8} container>
+    <Grid
+      paddingX={'5px'}
+      flexGrow={grow}
+      size={size}
+      alignItems={'center'}
+      display={'flex'}
+      minHeight={`${height}px`}
+      {...gridProps}
+    >
       {linksList}
     </Grid>
   )

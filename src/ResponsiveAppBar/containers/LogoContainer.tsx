@@ -1,12 +1,33 @@
 import Logo from '../components/Logo'
 
-import Box from '@mui/material/Box'
+import Grid, { Grid2Props } from '@mui/material/Grid2'
 
-const LogoContainer = () => {
+type LogoContainerProps = {
+  height?: number
+  size?: number
+  grow?: number
+  gridProps?: Grid2Props
+}
+
+const LogoContainer = ({
+  height,
+  size,
+  grow,
+  gridProps,
+}: LogoContainerProps) => {
   return (
-    <Box width={'100%'} display={'flex'} justifyContent={'center'}>
+    <Grid
+      paddingX={'5px'}
+      flexGrow={grow}
+      size={size}
+      alignItems={'center'}
+      display={'flex'}
+      minHeight={`${height}px`}
+      justifyContent={'center'}
+      {...gridProps}
+    >
       <Logo />
-    </Box>
+    </Grid>
   )
 }
 

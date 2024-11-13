@@ -2,11 +2,31 @@ import { Settings } from '@mui/icons-material'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import ButtonGroup from '@mui/material/ButtonGroup'
-import Grid from '@mui/material/Grid2'
+import Grid, { Grid2Props } from '@mui/material/Grid2'
 
-const ActionsContainer = () => {
+type ActionsContainerProps = {
+  height?: number
+  size?: number
+  grow?: number
+  gridProps?: Grid2Props
+}
+
+const ActionsContainer = ({
+  height,
+  size,
+  grow,
+  gridProps,
+}: ActionsContainerProps) => {
   return (
-    <Grid>
+    <Grid
+      paddingX={'5px'}
+      flexGrow={grow}
+      size={size}
+      alignItems={'center'}
+      display={'flex'}
+      minHeight={`${height}px`}
+      {...gridProps}
+    >
       <ButtonGroup variant="text" size="small">
         <Button
           sx={(theme) => ({
@@ -18,7 +38,7 @@ const ActionsContainer = () => {
             ':hover *': { color: theme.palette.info.main },
           })}
         >
-          <Settings sx={(theme) => ({ width: '40px', height: '30px' })} />
+          <Settings sx={(theme) => ({ width: '30px', height: '30px' })} />
         </Button>
         <Button
           sx={(theme) => ({
@@ -29,7 +49,7 @@ const ActionsContainer = () => {
             ':hover *': { color: theme.palette.info.main },
           })}
         >
-          <Avatar sx={{ color: '#fff' }} />
+          <Avatar sx={{ color: '#fff', width: '30px', height: '30px' }} />
         </Button>
       </ButtonGroup>
     </Grid>

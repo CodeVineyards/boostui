@@ -1,12 +1,9 @@
-'use client'
 import AppBar from '@mui/material/AppBar'
 import Grid from '@mui/material/Grid2'
 import Toolbar from '@mui/material/Toolbar'
-import { useState } from 'react'
-import AppBarItem from './components/AppBarItem'
-import MenuButton from './components/MenuButton'
 import ActionsContainer from './containers/ActionsContainer'
 import LogoContainer from './containers/LogoContainer'
+import MenuContainer from './containers/MenuContainer'
 import NavContainer from './containers/NavContainer'
 
 type AppBarVariations = 'large' | 'medium' | 'small' | 'centered'
@@ -18,6 +15,7 @@ export type ResponsiveAppBarProps = {
   avatar?: boolean | undefined
   pageTitle?: boolean | undefined
   variation?: AppBarVariations
+  height?: number
 }
 
 const ResponsiveAppBar = ({
@@ -27,8 +25,8 @@ const ResponsiveAppBar = ({
   avatar = false,
   pageTitle = false,
   variation = 'large',
+  height = 64,
 }: ResponsiveAppBarProps) => {
-  const [height, setHeight] = useState(64)
   return (
     <AppBar
       // position="static"
@@ -41,15 +39,11 @@ const ResponsiveAppBar = ({
     >
       <Toolbar>
         <Grid minWidth={'100%'} alignItems={'center'} container>
-          <AppBarItem size={1} height={height} content={<LogoContainer />} />
-          <AppBarItem
-            gridProps={{ justifyContent: 'left' }}
-            grow={1}
-            height={height}
-            content={<NavContainer />}
-          />
-          <AppBarItem height={height} content={<ActionsContainer />} />
-          <AppBarItem size={0.75} height={height} content={<MenuButton />} />
+          <LogoContainer size={1} />
+          <NavContainer size={7} />
+          <div className="simple_flex_divider" style={{ flexGrow: 1 }}></div>
+          <ActionsContainer />
+          <MenuContainer gridProps={{ justifyContent: 'center' }} size={0.75} />
         </Grid>
       </Toolbar>
     </AppBar>

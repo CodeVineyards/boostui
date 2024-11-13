@@ -9,10 +9,10 @@ type NavBarLinkProps = {
   height?: number
 }
 
-const NavBarLink = ({ href, text, icon, height = 65 }: NavBarLinkProps) => {
+const NavBarLink = ({ href, text, icon, height = 33 }: NavBarLinkProps) => {
   return (
     <Grid
-      minHeight={`${33}px`}
+      minHeight={`${height}px`}
       sx={(theme) => ({
         transition: '.2s background-color ease-in-out',
         ':hover': {
@@ -27,7 +27,7 @@ const NavBarLink = ({ href, text, icon, height = 65 }: NavBarLinkProps) => {
     >
       <Link
         style={{
-          minHeight: `${33}px`,
+          minHeight: `${height}px`,
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
