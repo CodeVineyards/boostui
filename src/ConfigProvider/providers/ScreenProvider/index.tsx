@@ -23,4 +23,5 @@ function useScreen(): ScreenContextType {
   return context
 }
 
-export { Context as ScreenContext, Provider as ScreenProvider, useScreen }
+export { Context as ScreenContext, useScreen }
+export default Provider

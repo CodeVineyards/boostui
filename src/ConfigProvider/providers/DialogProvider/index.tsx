@@ -1,6 +1,5 @@
 // providers/DialogProvider/index.ts
-import { useContext } from 'react'
-import Context, { DialogContextType } from './Context'
+import { DialogContextType } from './Context'
 import Provider from './DialogProvider'
 
 /**
@@ -13,14 +12,5 @@ import Provider from './DialogProvider'
  * const Dialog = useDialog();
  * console.log(Dialog.isDialogenticated);
  */
-function useDialog(): DialogContextType {
-  const context = useContext(Context)
 
-  if (!context) {
-    throw new Error('useDialog must be used within an DialogProvider')
-  }
-
-  return context
-}
-
-export { Context as DialogContext, Provider as DialogProvider, useDialog }
+export default Provider

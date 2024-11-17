@@ -1,41 +1,46 @@
-'use client'
+import { ReactNode } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import 'server-only'
+
 import Dialog from '@mui/material/Dialog'
-import { ReactNode, useState } from 'react'
-import DialogContext, { DialogContextType } from './Context'
+
+import { RootState } from 'lib/store' // Adjust the path according to your store file's location
+
+import {
+  closeDialog,
+  openDialog,
+  setContent as setDialogContent,
+} from 'lib/features/dialog/dialogSlice'
 
 type DialogProviderProps = {
   children: ReactNode
 }
 
 const DialogProvider = ({ children }: DialogProviderProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-  const [content, setContent] = useState<ReactNode>(<>Dialog</>)
+  // Access Redux state
+  const isOpen = useSelector((state: RootState) => state.dialog.isOpen)
+  const content = useSelector((state: RootState) => state.dialog.content)
 
-  const openDialog = () => {
-    setIsOpen(true)
-  }
-
-  const closeDialog = () => {
-    setIsOpen(false)
-  }
-
-  const setDialogContent = (content: ReactNode) => {
-    return () => setContent(content)
-  }
-
-  const value: DialogContextType = {
-    isOpen: false,
-    content: <>Dialog</>,
-    openDialog,
-    closeDialog,
-    setDialogContent,
-  }
   return (
-    <DialogContext.Provider value={value}>
+    <>
       {children}
       <Dialog open={isOpen}>{content}</Dialog>
-    </DialogContext.Provider>
+    </>
   )
 }
+
+const openDialogAction = () => {
+  const dispatch = useDispatch()
+  return dispatch(openDialog())
+}
+const closeDialogAction = () => {
+  const dispatch = useDispatch()
+  return dispatch(closeDialog())
+}
+const setDialogContentAction = (content: ReactNode) => () => {
+  const dispatch = useDispatch()
+  return dispatch(setDialogContent(content))
+}
+export { closeDialogAction, openDialogAction, setDialogContentAction }
 
 export default DialogProvider

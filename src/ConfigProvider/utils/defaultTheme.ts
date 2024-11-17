@@ -1,5 +1,6 @@
-import { createTheme } from '@mui/material'
+'use client'
 import { deepPurple, lime } from '@mui/material/colors'
+import { createTheme } from '@mui/material/styles'
 
 export default createTheme({
   palette: {
