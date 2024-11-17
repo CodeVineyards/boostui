@@ -1,12 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit'
+
+import authReducer from './features/auth/authSlice'
 import dialogReducer from './features/dialog/dialogSlice'
 import drawerReducer from './features/drawer/drawerSlice'
+import localeReducer from './features/locale/localeSlice'
+import menuReducer from './features/menu/menuSlice'
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
+      auth: authReducer,
       drawer: drawerReducer,
       dialog: dialogReducer,
+      locale: localeReducer,
+      menu: menuReducer,
     },
   })
 }
