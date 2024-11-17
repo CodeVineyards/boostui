@@ -13,7 +13,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "baseUrl": "./",
-    "types": ["node", "react"]
+    "types": ["node", "react"],
+    "paths": {}
   },
   "include": ["src", "lib"],
   "exclude": ["node_modules", "dist", "**/*.test.tsx", "**/*.stories.tsx"]
