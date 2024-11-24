@@ -4,11 +4,15 @@ import styles from './page.module.css'
 
 import ResponsiveAppBar from '@/components/ResponsiveAppBar'
 
+import { useDialogActions } from './actions'
+
 export default function Home() {
+  const { openDialog } = useDialogActions()
   return (
     <div className={styles.page}>
       <ResponsiveAppBar />
       <main className={styles.main}>
+        <button onClick={openDialog}>Push</button>
         <Image
           className={styles.logo}
           src="/next.svg"

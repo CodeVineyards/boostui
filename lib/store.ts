@@ -1,25 +1,45 @@
-import { configureStore } from '@reduxjs/toolkit'
+import type { Action, ThunkAction } from '@reduxjs/toolkit'
+import { combineSlices, configureStore } from '@reduxjs/toolkit'
+import { authSlice } from './features/auth/authSlice'
+import { dialogSlice } from './features/dialog/dialogSlice'
+import { drawerSlice } from './features/drawer/drawerSlice'
+import { localeSlice } from './features/locale/localeSlice'
+import { menuSlice } from './features/menu/menuSlice'
 
-import authReducer from './features/auth/authSlice'
-import dialogReducer from './features/dialog/dialogSlice'
-import drawerReducer from './features/drawer/drawerSlice'
-import localeReducer from './features/locale/localeSlice'
-import menuReducer from './features/menu/menuSlice'
+// `combineSlices` automatically combines the reducers using
+// their `reducerPath`s, therefore we no longer need to call `combineReducers`.
+const rootReducer = combineSlices(
+  authSlice,
+  dialogSlice,
+  drawerSlice,
+  localeSlice,
+  menuSlice
+)
+// Infer the `RootState` type from the root reducer
+export type RootState = ReturnType<typeof rootReducer>
 
+// `makeStore` encapsulates the store configuration to allow
+// creating unique store instances, which is particularly important for
+// server-side rendering (SSR) scenarios. In SSR, separate store instances
+// are needed for each request to prevent cross-request state pollution.
 export const makeStore = () => {
   return configureStore({
-    reducer: {
-      auth: authReducer,
-      drawer: drawerReducer,
-      dialog: dialogReducer,
-      locale: localeReducer,
-      menu: menuReducer,
-    },
+    reducer: rootReducer,
+    // Adding the api middleware enables caching, invalidation, polling,
+    // and other useful features of `rtk-query`.
+    // middleware: (getDefaultMiddleware) => {
+    //   return getDefaultMiddleware().concat(quotesApiSlice.middleware)
+    // },
   })
 }
 
-// Infer the type of makeStore
+// Infer the return type of `makeStore`
 export type AppStore = ReturnType<typeof makeStore>
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<AppStore['getState']>
+// Infer the `AppDispatch` type from the store itself
 export type AppDispatch = AppStore['dispatch']
+export type AppThunk<ThunkReturnType = void> = ThunkAction<
+  ThunkReturnType,
+  RootState,
+  unknown,
+  Action
+>

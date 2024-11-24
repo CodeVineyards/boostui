@@ -10,7 +10,7 @@ const initialState: LocaleState = {
   locale: 'en', // Default to English, but this can be changed
 }
 
-const localeSlice = createSlice({
+export const localeSlice = createSlice({
   name: 'locale',
   initialState,
   reducers: {

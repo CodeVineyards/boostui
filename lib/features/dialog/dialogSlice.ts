@@ -11,7 +11,7 @@ const initialState: DialogState = {
   content: null,
 }
 
-const dialogSlice = createSlice({
+export const dialogSlice = createSlice({
   name: 'dialog',
   initialState,
   reducers: {
@@ -24,6 +24,9 @@ const dialogSlice = createSlice({
     setContent(state, action: PayloadAction<ReactNode>) {
       state.content = action.payload
     },
+  },
+  selectors: {
+    selectIsOpen: (dialog) => dialog.isOpen,
   },
 })
 

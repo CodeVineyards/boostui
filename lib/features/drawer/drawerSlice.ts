@@ -11,7 +11,7 @@ const initialState: DrawerState = {
   content: null,
 }
 
-const drawerSlice = createSlice({
+export const drawerSlice = createSlice({
   name: 'drawer',
   initialState,
   reducers: {

@@ -13,7 +13,7 @@ const initialState: MenuState = {
   anchorEl: null,
 }
 
-const menuSlice = createSlice({
+export const menuSlice = createSlice({
   name: 'menu',
   initialState,
   reducers: {
