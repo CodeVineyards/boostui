@@ -1,4 +1,4 @@
-# boostui
+# BoostUI
 
 **Responsive, customizable Material-UI components with integrated context providers for seamless state management.**
 
