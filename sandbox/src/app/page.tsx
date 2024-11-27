@@ -2,15 +2,17 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 
-import ResponsiveAppBar from '@/components/ResponsiveAppBar'
+import ResponsiveAppBar from '@/components/theme/ResponsiveAppBar'
 
 import { useDialogActions } from './actions'
+import PageHeadline from '../../../src/generic/PageHeadline/PageHeadline'
 
 export default function Home() {
   const { openDialog } = useDialogActions()
   return (
     <div className={styles.page}>
       <ResponsiveAppBar />
+      <PageHeadline />
       <main className={styles.main}>
         <button onClick={openDialog}>Push</button>
         <Image

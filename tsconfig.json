@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "types": ["node", "react"],
-    "paths": {}
+    "paths": {
+      "lib/*": ["./lib/*"]
+    }
   },
   "include": ["src", "lib"],
   "exclude": ["node_modules", "dist", "**/*.test.tsx", "**/*.stories.tsx"]

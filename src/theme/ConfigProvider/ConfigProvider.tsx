@@ -1,4 +1,4 @@
-import StoreProvider from '../../lib/StoreProvider'
+import StoreProvider from 'lib/StoreProvider'
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import MuiThemeProvider from '@mui/material/styles/ThemeProvider'
@@ -20,7 +20,7 @@ const ConfigProvider = ({ children }: ConfigProviderProps) => {
           {/* <DialogProvider> */}
           <ProvidersAggr>
             {children}
-            <DialogSSR isOpen={true} content="content" />
+            <DialogSSR isOpen={false} content="content" />
           </ProvidersAggr>
           {/* </DialogProvider> */}
         </MuiThemeProvider>

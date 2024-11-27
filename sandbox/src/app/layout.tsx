@@ -1,4 +1,4 @@
-import ConfigProvider from '@/components/ConfigProvider'
+import ConfigProvider from '@/components/theme/ConfigProvider'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ConfigProvider>{children}</ConfigProvider>
       </body>

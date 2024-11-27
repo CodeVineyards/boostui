@@ -5,9 +5,9 @@ import { ReactNode } from 'react'
 // export const dynamic = 'force-static'
 
 type DialogSSRProps = {
-  content: ReactNode
+  content?: ReactNode
   isOpen: boolean
-  closeDialog: () => void
+  closeDialog?: () => void
 }
 
 const DialogSSR = ({
