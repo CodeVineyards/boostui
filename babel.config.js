@@ -15,8 +15,7 @@ function resolveAliasPath(relativeToBabelConf) {
 }
 
 const aliases = {
-  components: resolveAliasPath('./src/components'),
-  utils: resolveAliasPath('./src/utils'),
+  components: resolveAliasPath('./src'),
 }
 
 module.exports = function (api) {

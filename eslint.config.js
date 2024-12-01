@@ -51,16 +51,32 @@ module.exports = defineConfig({
       {
         paths: [
           {
-            name: '@mui/material',
+            name: 'boostui/widgets',
             message:
-              'Avoid deep imports, use one-level imports from @mui/material.',
+              'Avoid deep imports, use one-level imports from boostui/widgets.',
           },
           {
-            name: '@mui/lab',
-            message: 'Avoid deep imports, use one-level imports from @mui/lab.',
+            name: 'boostui/layout',
+            message:
+              'Avoid deep imports, use one-level imports from boostui/layout.',
+          },
+          {
+            name: 'boostui/theme',
+            message:
+              'Avoid deep imports, use one-level imports from boostui/theme.',
+          },
+          {
+            name: 'boostui/ecomm',
+            message:
+              'Avoid deep imports, use one-level imports from boostui/ecomm.',
+          },
+          {
+            name: 'boostui/blog',
+            message:
+              'Avoid deep imports, use one-level imports from boostui/blog.',
           },
         ],
-        patterns: ['@mui/*/*/*'],
+        patterns: ['boostui/*/*/*'],
       },
     ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
