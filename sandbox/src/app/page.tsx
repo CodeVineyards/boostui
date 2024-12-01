@@ -4,8 +4,8 @@ import styles from './page.module.css'
 
 import ResponsiveAppBar from '@/components/theme/ResponsiveAppBar'
 
+import PageHeadline from '../../../src/widgets/PageHeadline/PageHeadline'
 import { useDialogActions } from './actions'
-import PageHeadline from '../../../src/generic/PageHeadline/PageHeadline'
 
 export default function Home() {
   const { openDialog } = useDialogActions()
