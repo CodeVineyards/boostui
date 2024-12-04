@@ -15,9 +15,10 @@
     "baseUrl": "./",
     "types": ["node", "react"],
     "paths": {
-      "lib/*": ["./lib/*"]
+      "@/lib/*": ["./lib/*"],
+      "@/widgets/*": ["./src/widgets/*"]
     }
   },
-  "include": ["src", "lib"],
+  "include": ["src", "lib", "jest.config.js"],
   "exclude": ["node_modules", "dist", "**/*.test.tsx", "**/*.stories.tsx"]
 }

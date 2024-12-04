@@ -12,11 +12,11 @@ const config = {
     user: null, // Default user is null (no logged-in user)
     login: (username: string) => {
       // Placeholder login function
-      console.log(`Logging in user: ${username}`)
+      return `Logging in user: ${username}`
     },
     logout: () => {
       // Placeholder logout function
-      console.log('Logging out user')
+      return 'Logging out user'
     },
   },
   dialog: {
@@ -24,15 +24,15 @@ const config = {
     content: null, // Default content of the dialog
     openDialog: () => {
       // Placeholder function to open the dialog
-      console.log('Dialog opened')
+      return 'Dialog opened'
     },
     closeDialog: () => {
       // Placeholder function to close the dialog
-      console.log('Dialog closed')
+      return 'Dialog closed'
     },
     setDialogContent: (content: ReactNode) => {
       // Placeholder function to set dialog content
-      console.log('Dialog content set:', content)
+      return 'Dialog content set:' + content
     },
   },
   drawer: {
@@ -40,15 +40,15 @@ const config = {
     content: null, // Default content of the drawer
     openDrawer: () => {
       // Placeholder function to open the drawer
-      console.log('Drawer opened')
+      return 'Drawer opened'
     },
     closeDrawer: () => {
       // Placeholder function to close the drawer
-      console.log('Drawer closed')
+      return 'Drawer closed'
     },
     setDrawerContent: (content: ReactNode) => {
       // Placeholder function to set drawer content
-      console.log('Drawer content set:', content)
+      return 'Drawer content set:' + content
     },
   },
 }
