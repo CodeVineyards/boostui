@@ -38,7 +38,7 @@ const ActionsContainer = ({
             ':hover *': { color: theme.palette.info.main },
           })}
         >
-          <Settings sx={(theme) => ({ width: '30px', height: '30px' })} />
+          <Settings sx={() => ({ width: '30px', height: '30px' })} />
         </Button>
         <Button
           sx={(theme) => ({

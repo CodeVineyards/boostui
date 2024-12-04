@@ -27,6 +27,7 @@ const ResponsiveAppBar = ({
   variation = 'large',
   height = 64,
 }: ResponsiveAppBarProps) => {
+  const p = { logo, bottomNav, dense, avatar, pageTitle, variation, height }
   return (
     <AppBar
       // position="static"
@@ -44,6 +45,7 @@ const ResponsiveAppBar = ({
           <div className="simple_flex_divider" style={{ flexGrow: 1 }}></div>
           <ActionsContainer />
           <MenuContainer gridProps={{ justifyContent: 'center' }} size={0.75} />
+          <div>{p + ''}</div>
         </Grid>
       </Toolbar>
     </AppBar>
