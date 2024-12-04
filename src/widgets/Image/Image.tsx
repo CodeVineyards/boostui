@@ -1,5 +1,5 @@
 const Image = () => {
-  return <div>Image</div>
+  return <img />
 }
 
 export default Image

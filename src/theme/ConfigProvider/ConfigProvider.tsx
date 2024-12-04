@@ -1,4 +1,4 @@
-import StoreProvider from 'lib/StoreProvider'
+import StoreProvider from '@/lib/StoreProvider'
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import MuiThemeProvider from '@mui/material/styles/ThemeProvider'

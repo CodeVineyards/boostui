@@ -1,14 +1,14 @@
 'use client'
-import { useAppDispatch, useAppSelector } from 'lib/hooks'
+import { useAppDispatch, useAppSelector } from '@/lib/hooks'
 import { ReactNode } from 'react'
 
-import { RootState } from 'lib/store' // Adjust the path according to your store file's location
+import { RootState } from '@/lib/store' // Adjust the path according to your store file's location
 
 import {
   closeDialog,
   openDialog,
   setContent as setDialogContent,
-} from 'lib/features/dialog/dialogSlice'
+} from '@/lib/features/dialog/dialogSlice'
 import DialogSSR from './DialogSSR'
 
 type DialogProviderProps = {
@@ -36,18 +36,18 @@ const DialogProvider = ({ children }: DialogProviderProps) => {
   )
 }
 
-const openDialogAction = () => {
+const useOpenDialogAction = () => {
   const dispatch = useAppDispatch()
   return dispatch(openDialog())
 }
-const closeDialogAction = () => {
+const useCloseDialogAction = () => {
   const dispatch = useAppDispatch()
   return dispatch(closeDialog())
 }
-const setDialogContentAction = (content: ReactNode) => () => {
+const useSetDialogContentAction = (content: ReactNode) => {
   const dispatch = useAppDispatch()
   return dispatch(setDialogContent(content))
 }
-export { closeDialogAction, openDialogAction, setDialogContentAction }
+export { useCloseDialogAction, useOpenDialogAction, useSetDialogContentAction }
 
 export default DialogProvider

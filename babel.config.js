@@ -15,12 +15,11 @@ function resolveAliasPath(relativeToBabelConf) {
 }
 
 const aliases = {
-  components: resolveAliasPath('./src'),
+  components: resolveAliasPath('./src/*'),
 }
 
 module.exports = function (api) {
-  api.cache(true) // Cache the Babel config for faster rebuilds
-
+  // api.cache(true) // Cache the Babel config for faster rebuilds
   const isTestEnv = api.env('test')
   const isProdEnv = api.env('production')
 
@@ -37,7 +36,6 @@ module.exports = function (api) {
       ['@babel/preset-react', { runtime: 'automatic' }],
     ],
     plugins: [
-      '@babel/plugin-transform-runtime',
       isProdEnv && [
         'babel-plugin-transform-react-remove-prop-types',
         { mode: 'remove' }, // Removes prop-types in production
@@ -45,6 +43,12 @@ module.exports = function (api) {
       isProdEnv && '@babel/plugin-transform-react-constant-elements', // Optimizes constant elements in React
       ['babel-plugin-module-resolver', { alias: aliases }], // Aliases for simplified imports
       ['transform-inline-environment-variables', { include: ['NODE_ENV'] }], // Inject environment variables
+      isProdEnv
+        ? [
+            '@babel/plugin-transform-runtime',
+            'babel-plugin-transform-remove-console',
+          ]
+        : ['@babel/plugin-transform-runtime'],
     ].filter(Boolean), // Remove any false values (like conditionally added plugins)
     env: {
       test: {
