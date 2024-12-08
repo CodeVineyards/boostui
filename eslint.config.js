@@ -14,6 +14,7 @@ module.exports = defineConfig(
         window: 'readonly',
         document: 'readonly',
         process: 'readonly',
+        jest: 'readonly',
       },
       parser: tsParser,
       parserOptions: {
@@ -24,9 +25,6 @@ module.exports = defineConfig(
         },
       },
     },
-    env: {
-      jest: true,
-    },
     plugins: {
       react: reactPlugin,
       'react-hooks': reactHooksPlugin,
@@ -34,7 +32,14 @@ module.exports = defineConfig(
       prettier: prettierPlugin,
     },
 
-    ignores: ['node_modules', 'dist', 'eslint.config.js', 'babel.config.js'], // Ensure 'src' is not ignored here
+    ignores: [
+      'node_modules',
+      'dist/',
+      '**/**/*.test.js',
+      'eslint.config.js',
+      'babel.config.js',
+      'jest.config.js',
+    ], // Ensure 'src' is not ignored here
     settings: {
       react: {
         version: 'detect',

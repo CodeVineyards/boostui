@@ -8,6 +8,15 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "env": {
+    "jest": true
+  },
+  "plugins": [
+    "jest"
+  ],
+  "extends": [
+    "plugin:jest/recommended"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "build": "yarn clean && tsc && babel src --out-dir dist",

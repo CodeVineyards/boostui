@@ -1,16 +1,17 @@
 module.exports = {
   setupFilesAfterEnv: ['@testing-library/jest-dom'],
-  testEnvironment: 'jsdom', // Use 'node' for non-DOM tests
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '^@/widgets/(.*)$': '<rootDir>/src/widgets/$1', // Add this line to handle the alias
   },
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.tsx?$': 'ts-jest',
   },
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
-  collectCoverage: true, // To collect coverage information
-  coverageDirectory: 'coverage', // Where to output coverage files
-  coverageReporters: ['text', 'lcov'], // Format of the coverage reports
-  // testPathIgnorePatterns: ['/dist/'], // Ignore the dist folder
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'lcov'],
+  // testPathIgnorePatterns: ['/dist/'],
 }
