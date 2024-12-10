@@ -26,14 +26,17 @@ const DrawerProvider = ({ children, content: propsContent }: DrawerProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [content, setContent] = useState<ReactNode | null>(propsContent);
 
-  const setDrawerContent = (content: ReactNode | string) => setContent(content);
+  const setDrawerContent = (content: ReactNode | string) => () =>
+    setContent(content);
 
-  openDrawer;
-  closeDrawer;
-  setDrawerContent;
-
+  const openDrawer = () => setIsOpen(true);
+  const closeDrawer = () => setIsOpen(false);
   const value: DrawerContextType = {
+    isOpen,
+    content,
     setDrawerContent,
+    openDrawer,
+    closeDrawer,
   };
 
   return (
