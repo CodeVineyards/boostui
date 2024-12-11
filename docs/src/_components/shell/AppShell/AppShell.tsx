@@ -1,4 +1,4 @@
-import ThemeProvider from '@/providers/Theme';
+import ThemeProvider from '@/_components/shell/providers/Theme';
 import { ReactNode } from 'react';
 import DrawerProvider from '../providers/Drawer/Drawer';
 
